@@ -21,7 +21,7 @@
     })
 
     const submit = async () => {
-        await fetch('http://localhost:8000/api/messages', {
+        await fetch('http://172.18.0.2:8000/api/messages', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
