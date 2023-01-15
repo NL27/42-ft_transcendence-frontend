@@ -6,8 +6,6 @@ WORKDIR /chatapp
 
 RUN npm install
 
-RUN npm run dev
-
 RUN npm install pusher-js
 
-ENTRYPOINT ["npm", "run", "start:dev"]
+ENTRYPOINT ["npm", "run"]
