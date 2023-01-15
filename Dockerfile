@@ -8,4 +8,10 @@ RUN npm install
 
 RUN npm install pusher-js
 
-ENTRYPOINT ["npm", "run", "start:dev"]
+# RUN npm run build
+
+RUN npm run-script build
+
+# ENTRYPOINT ["npm", "start"]
+CMD [ "npm", "run", "dev"]
+# ENTRYPOINT ["npm", "run", "start"]
