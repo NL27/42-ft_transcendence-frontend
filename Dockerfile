@@ -10,7 +10,7 @@ RUN npm install pusher-js
 
 # RUN npm run build
 
-RUN npm run dev
+# RUN npm run dev
 
 # RUN npm run-script build
 
