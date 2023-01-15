@@ -1,7 +1,7 @@
 <script>
 
     import {onMount} from 'svelte';
-    import Pusher from 'pusher.js';
+    import Pusher from 'pusher-js';
 
     let username = 'username';
     let message = '';
@@ -20,10 +20,10 @@
         });
     })
 
-    const submit = async {} => {
+    const submit = async () => {
         await fetch('http://localhost:5173/api/messages', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'};
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 username,
                 message
