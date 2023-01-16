@@ -46,7 +46,7 @@
                     <div class="d-flex w-100 align-items-center justify-content-between">
                         <strong class="mb-1">{msg.username}</strong>
                     </div>
-                    <div class="col-10 mb-1 small">{msg.message}</div>
+                    <div class="col-10 mb-1 small">{msg}</div>
                 </div>
             {/each}
         </div>
