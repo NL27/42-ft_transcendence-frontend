@@ -44,9 +44,9 @@
             {#each message as msg}
                 <div class="list-group-item list-group-item-action py-3 lh tight">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                        <strong class="mb-1">{username}</strong>
+                        <strong class="mb-1">{msg.username}</strong>
                     </div>
-                    <div class="col-10 mb-1 small">{message}</div>
+                    <div class="col-10 mb-1 small">{msg.message}</div>
                 </div>
             {/each}
         </div>
