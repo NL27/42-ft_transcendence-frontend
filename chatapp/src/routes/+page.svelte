@@ -16,6 +16,7 @@
 
         const channel = pusher.subscribe('chat');
         channel.bind('message', data => {
+            console.log(data);
             messages = [...messages, data];
         });
     })
