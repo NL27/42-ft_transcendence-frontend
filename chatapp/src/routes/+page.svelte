@@ -37,7 +37,7 @@
 <div class="container">
     <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
         <div class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
-            <input class="fs-5" bind:value={username}/>
+            <input class="fs-5 fw-semibold" bind:value={username}/>
         </div>
         <div class="list-group list-group-flush border-bottom scrollarea">
             {#each message as msg}
@@ -45,7 +45,7 @@
                     <div class="d-flex w-100 align-items-center justify-content-between">
                         <strong class="mb-1">{msg.username}</strong>
                     </div>
-                    <div class="col-10 mb-1 small">{msg.message}</div>
+                    <div class="mb-1">{msg.message}</div>
                 </div>
             {/each}
         </div>
