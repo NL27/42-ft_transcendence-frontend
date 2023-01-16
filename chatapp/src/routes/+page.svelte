@@ -16,7 +16,6 @@
 
         const channel = pusher.subscribe('chat');
         channel.bind('message', data => {
-            console.log(data);
             messages = [...messages, data];
         });
     })
@@ -41,7 +40,7 @@
             <input class="fs-5 fw-semibold" bind:value={username}/>
         </div>
         <div class="list-group list-group-flush border-bottom scrollarea">
-            {#each message as msg}
+            {#each messages as msg}
                 <div class="list-group-item list-group-item-action py-3 lh tight">
                     <div class="d-flex w-100 align-items-center justify-content-between">
                         <strong class="mb-1">{msg.username}</strong>
