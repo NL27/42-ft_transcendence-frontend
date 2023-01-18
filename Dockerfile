@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:19.4.0-bullseye-slim
 
 COPY chatapp /chatapp
 
