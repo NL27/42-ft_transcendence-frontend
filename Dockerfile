@@ -8,6 +8,8 @@ RUN npm install
 
 RUN npm install pusher-js
 
+RUN npm install -D tailwindcss postcss autoprefixer
+
 # RUN npm run build
 
 # RUN npm run dev
