@@ -1,37 +1,15 @@
-<script>
+<script lang="ts">
+    
+    import { io } from 'socket.io-client'
 
-    import {onMount} from 'svelte';
-    import Pusher from 'pusher-js';
+    const socket = io()
 
-    let username = 'username';
-    let message = '';
-    let messages = [];
-
-    onMount(() => {
-        Pusher.logToConsole = true;
-
-        const pusher = new Pusher('1071696b7e5cadb3187d', {
-            cluster: 'eu'
-        });
-
-        const channel = pusher.subscribe('chat');
-        channel.bind('message', data => {
-            messages = [...messages, data];
-        });
+    socket.on('eventFromServer', (message) => {
+        console.log(message)
     })
 
-    const submit = async () => {
-        await fetch('http://localhost:8000/api/messages', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                username,
-                message
-            })
-        });
 
-        message = '';
-    }
+    
 </script>
 
 <div class="container">

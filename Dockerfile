@@ -6,13 +6,18 @@ WORKDIR /chatapp
 
 RUN npm install
 
-RUN npm install pusher-js
+RUN npm install -D @sveltejs/adapter-node
+
+RUN npm install express @types/express
+
+
 
 # RUN npm run build
 
 # RUN npm run dev
 
 # RUN npm run-script build
+
 
 # ENTRYPOINT ["npm", "start"]
 ENTRYPOINT [ "npm", "run", "dev", "--", "--host"]
