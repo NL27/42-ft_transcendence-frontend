@@ -32,7 +32,7 @@
         message = '';
     }
 </script>
-
+  
 <html class="h-full bg-gray-100">
     <body class="h-full">
         <div class="mx-auto max-w-7xl py-12 px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
@@ -47,6 +47,50 @@
             </div>
         </div>
 
+    <div class="container mx-auto">
+    <div class="columns-3">
+    <!-- 1. Column -->
+    <div class="container">
+
+        <div class="box-border border-2 h-52 w-100 text-center">
+        <h1>Leaderboard</h1>
+        
+        </div>
+        </div>
+        
+    <!-- 2. Column -->
+    <div class="container">
+
+        <div class="box-border border-2 h-52 w-100 text-center">
+        <h1>Game</h1>
+        
+        </div>
+        </div>
+            
+    <!-- 3. Column -->
+    <div class="container">
+
+        <div class="box-border border-2 h-52 w-100 text-center">
+        <h1>Chat</h1>        
+                            <input class="fs-5 fw-semibold" placeholder="Write a username" bind:value={username}/>
+                        <div class=" list-group-flush border-bottom overflow-y-auto h-10">
+                            {#each messages as msg}
+                                <div class="list-group-item list-group-item-action py-3 lh tight">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">{msg.username}</strong>
+                                    </div>
+                                    <div class="col-10 mb-1 small">{msg.message}</div>
+                                </div>
+                            {/each}
+                        </div>
+                    <form on:submit|preventDefault={submit}>
+                        <input class="form-control" placeholder="Write a message" bind:value={message}/>
+                    </form>
+        </div>
+        </div>
+
+    </div>
+    </div>
 
         <div class="min-h-full">
         <nav class="bg-gray-800">
@@ -182,28 +226,30 @@
             </div>
         </div>
 
-        <div class="container">
-        <div class="bg-white">
-            <div class=" p-4 border-bottom">
-                <input class="fs-5 fw-semibold" bind:value={username}/>
-            </div>
-            <div class="list-group list-group-flush border-bottom scrollarea">
-                {#each messages as msg}
-                    <div class="list-group-item list-group-item-action py-3 lh tight">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">{msg.username}</strong>
-                        </div>
-                        <div class="col-10 mb-1 small">{msg.message}</div>
-                    </div>
-                {/each}
-            </div>
-        </div>
-        <form on:submit|preventDefault={submit}>
-            <input class="form-control" placeholder="Write a message" bind:value={message}/>
-        </form>
-        </div>
+        
     </body>
 
+
+                <div class="container">
+                    <div class="bg-white">
+                        <div class=" p-4 border-bottom">
+                            <input class="fs-5 fw-semibold" placeholder="Write a username" bind:value={username}/>
+                        </div>
+                        <div class="list-group list-group-flush border-bottom scrollarea">
+                            {#each messages as msg}
+                                <div class="list-group-item list-group-item-action py-3 lh tight">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <strong class="mb-1">{msg.username}</strong>
+                                    </div>
+                                    <div class="col-10 mb-1 small">{msg.message}</div>
+                                </div>
+                            {/each}
+                        </div>
+                    </div>
+                    <form on:submit|preventDefault={submit}>
+                        <input class="form-control" placeholder="Write a message" bind:value={message}/>
+                    </form>
+                </div>
     
 </html>
 
