@@ -6,7 +6,9 @@ WORKDIR /chatapp
 
 RUN npm install
 
-RUN npm install pusher-js
+RUN npm install -D tailwindcss postcss autoprefixer
+
+RUN npx tailwindcss init tailwind.config.cjs -p
 
 # RUN npm run build
 
